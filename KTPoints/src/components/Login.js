@@ -51,18 +51,15 @@ class Login extends Component {
 // define your styles
 const styles = StyleSheet.create({
     container: {
-        marginTop: 100,
         flex: 1,
         backgroundColor: '#2c3e50',
     },
     loginContainer:{
-        marginTop: 25, 
         alignItems: 'center',
         flexGrow: 1,
         justifyContent: 'center'
     },
     formContainer:{
-        marginTop: 100,
         flexGrow: 1,
         justifyContent: 'center'
     },
@@ -77,6 +74,26 @@ const styles = StyleSheet.create({
         width: 180,
         textAlign: 'center',
         opacity: 0.9
+    },
+    input:{
+        height: 40,
+        backgroundColor: 'rgba(225,225,225,0.2)',
+        marginBottom: 10,
+        padding: 10,
+        color: '#fff'
+    },
+    buttonContainer:{
+        backgroundColor: '#2980b6',
+        paddingVertical: 20,
+    },
+    buttonText:{
+        color: '#FFF',
+        textAlign: 'center',
+        fontWeight: '700'
+    }, 
+    loginButton:{
+      backgroundColor:  '#2980b6',
+       color: '#fff'
     }
 });
 
