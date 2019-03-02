@@ -2,9 +2,7 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Alert, Button ,StyleSheet ,StatusBar} from 'react-native';
 
-const onButtonPress = () => {
-  Alert.alert('Button has been pressed!');
-};
+
 
 
 // create a component
@@ -28,7 +26,14 @@ class LoginForm extends Component {
                            placeholderTextColor='rgba(225,225,225,0.7)' 
                            secureTextEntry/>
                  {/*   <Button onPress={onButtonPress} title = 'Login' style={styles.loginButton} /> */}
-              <TouchableOpacity style={styles.buttonContainer} onPress={onButtonPress}>
+              <TouchableOpacity style={styles.buttonContainer} onPress={() => {
+                    this.props.navigation.dispatch(StackActions.reset({
+                        index: 0,
+                        actions: [
+                            NavigationActions.navigate({ routeName: 'Details' })
+                        ],
+                    }))
+                }}>
                     <Text  style={styles.buttonText}>LOGIN</Text>
                 </TouchableOpacity> 
             </View>
