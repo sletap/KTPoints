@@ -9,7 +9,6 @@ class Login extends Component {
         return (
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
 
-
                <View style={styles.formContainer}>
                    <LoginForm />
                </View>
@@ -23,6 +22,7 @@ class Login extends Component {
 // define your styles
 const styles = StyleSheet.create({
     container: {
+        marginTop: 100,
         flex: 1,
         backgroundColor: '#2c3e50',
     },
