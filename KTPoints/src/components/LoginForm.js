@@ -7,7 +7,12 @@ import 'react-navigation';
 
 // create a component
 class LoginForm extends Component {
+    static navigationOptions = {
+        title: 'Welcome',
+    };
+    
     render() {
+        const {navigate} = this.props.navigation;
         return (
             <View style={styles.container}>
                 <StatusBar barStyle="light-content"/>
@@ -32,7 +37,7 @@ class LoginForm extends Component {
                 </TouchableOpacity>  */}
                 <Button style={styles.buttonContainer}
                     title='Login'
-                    onPress={() => this.props.navigation.navigate('HelloWorldScreen')}
+                    onPress={() => navigate('HelloWorldScreen')}
                     />
             </View>
         );

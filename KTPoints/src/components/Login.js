@@ -1,18 +1,45 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet,KeyboardAvoidingView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Alert, Button ,StyleSheet ,StatusBar,KeyboardAvoidingView,Image} from 'react-native';
 import LoginForm from './LoginForm';
 
 // create a component
 class Login extends Component {
+    static navigationOptions = {
+        title: 'Welcome',
+    };
     render() {
+        const {navigate} = this.props.navigation;
         return (
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
                 <View style={styles.loginContainer}>
                     <Image source={require('./images/ktpLogo.png')}  style={styles.logo}/>
                 </View>
                <View style={styles.formContainer}>
-                   <LoginForm />
+               <StatusBar barStyle="light-content"/>
+                <TextInput style = {styles.input} 
+                            autoCapitalize="none" 
+                            onSubmitEditing={() => this.passwordInput.focus()} 
+                            autoCorrect={false} 
+                            keyboardType='email-address' 
+                            returnKeyType="next" 
+                            placeholder='Email or Mobile Num' 
+                            placeholderTextColor='rgba(225,225,225,0.7)'/>
+
+                <TextInput style = {styles.input}   
+                           returnKeyType="go" ref={(input)=> this.passwordInput = input} 
+                           placeholder='Password' 
+                           placeholderTextColor='rgba(225,225,225,0.7)' 
+                           secureTextEntry/>
+                 {/*   <Button onPress={onButtonPress} title = 'Login' style={styles.loginButton} /> */}
+              {/* <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('HelloWorldScreen')}
+                    >
+                    <Text  style={styles.buttonText}>LOGIN</Text>
+                </TouchableOpacity>  */}
+                <Button style={styles.buttonContainer}
+                    title='Login'
+                    onPress={() => navigate('HelloWorldScreen')}
+                    />
                </View>
                
          

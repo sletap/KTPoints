@@ -23,13 +23,13 @@ const Navigator = createStackNavigator({
 }
 );
 
-const AppContainer = createAppContainer(Navigator);
+const App = createAppContainer(Navigator);
 
 
-class App extends Component {
-  render() {
-    return <AppContainer />
-  }
-}
+// class App extends Component {
+//   render() {
+//     return <AppContainer />
+//   }
+// }
 export default App;
 
