@@ -8,7 +8,9 @@ class Login extends Component {
     render() {
         return (
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
-
+                <View style={styles.loginContainer}>
+                    <Image source={require('./images/ktpLogo.png')}  style={styles.logo}/>
+                </View>
                <View style={styles.formContainer}>
                    <LoginForm />
                </View>
@@ -27,7 +29,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#2c3e50',
     },
     loginContainer:{
+        marginTop: 25, 
         alignItems: 'center',
+        flexGrow: 1,
+        justifyContent: 'center'
+    },
+    formContainer:{
+        marginTop: 100,
         flexGrow: 1,
         justifyContent: 'center'
     },
