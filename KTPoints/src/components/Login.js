@@ -38,7 +38,7 @@ class Login extends Component {
                 </TouchableOpacity>  */}
                 <Button style={styles.buttonContainer}
                     title='Login'
-                    onPress={() => navigate('HelloWorldScreen')}
+                    onPress={() => navigate('MainScreen')}
                     />
                </View>
                

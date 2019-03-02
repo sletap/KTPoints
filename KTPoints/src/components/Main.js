@@ -1,12 +1,15 @@
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import React from 'react'
+import { View } from 'react-native'
+import Points from './Points'
+import Header from './Header'
 
-export default class HelloWorldApp extends Component {
-  render() {
+const Main = () => {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Hello world!</Text>
-      </View>
+        <View>
+            <Header HeaderText='Welcome User!'/>
+            <Points/>
+        </View>
     );
-  }
 }
+
+export default Main;
