@@ -11,6 +11,7 @@ A crossplatform KTP app made using react native
 
 ## Step 2 Running the App:
 * Change to the inner KTPoints directory (KTPoints/KTPoints/)
+* Run: npm install
 * Then (with Xcode installed) run: react-native run-ios
 
 # Instructions for PC:
