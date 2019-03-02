@@ -9,25 +9,27 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import Login from './src/components/Login'
-import { createStackNavigator,} from 'react-navigation';
+import Login from './src/components/Login.js'
+import HelloWorldApp from './src/components/Main.js'
+import { createStackNavigator,createAppContainer } from 'react-navigation';
 
 
 const Navigator = createStackNavigator({
   LoginScreen: { screen: Login },
-});
+  HelloWorldScreen: {screen: HelloWorldApp},
+ },
+ {
+  initialRouteName: 'LoginScreen',
+}
+);
+
+const AppContainer = createAppContainer(Navigator);
 
 
-
-export default class App extends Component {
+class App extends Component {
   render() {
-    return (
-        <View>
-          <Login />
-        </View>
-    );
+    return <AppContainer />
   }
 }
-
-
+export default App;
 

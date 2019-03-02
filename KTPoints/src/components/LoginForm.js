@@ -1,7 +1,7 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Alert, Button ,StyleSheet ,StatusBar} from 'react-native';
-
+import 'react-navigation';
 
 
 
@@ -26,16 +26,14 @@ class LoginForm extends Component {
                            placeholderTextColor='rgba(225,225,225,0.7)' 
                            secureTextEntry/>
                  {/*   <Button onPress={onButtonPress} title = 'Login' style={styles.loginButton} /> */}
-              <TouchableOpacity style={styles.buttonContainer} onPress={() => {
-                    this.props.navigation.dispatch(StackActions.reset({
-                        index: 0,
-                        actions: [
-                            NavigationActions.navigate({ routeName: 'Details' })
-                        ],
-                    }))
-                }}>
+              {/* <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('HelloWorldScreen')}
+                    >
                     <Text  style={styles.buttonText}>LOGIN</Text>
-                </TouchableOpacity> 
+                </TouchableOpacity>  */}
+                <Button style={styles.buttonContainer}
+                    title='Login'
+                    onPress={() => this.props.navigation.navigate('HelloWorldScreen')}
+                    />
             </View>
         );
     }
