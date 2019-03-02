@@ -10,13 +10,13 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import Login from './src/components/Login.js'
-import HelloWorldApp from './src/components/Main.js'
+import Main from './src/components/Main.js'
 import { createStackNavigator,createAppContainer } from 'react-navigation';
 
 
 const Navigator = createStackNavigator({
   LoginScreen: { screen: Login },
-  HelloWorldScreen: {screen: HelloWorldApp},
+  MainScreen: {screen: Main},
  },
  {
   initialRouteName: 'LoginScreen',
