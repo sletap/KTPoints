@@ -3,7 +3,7 @@ import {Text, View } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 
-const Points = (props) => {
+const Meetings = (props) => {
         const { 
             headerContentStyle,
             CategoryStyle,
@@ -11,23 +11,14 @@ const Points = (props) => {
             NumberStyle
         } = styles;
 
-        let math = 100 - props.Points;
-
+        
         return (
             <View>
                 <Card>
-                    <CardSection style={containerStyle}>
-                        <View style={headerContentStyle}>
-                            <Text style={CategoryStyle}>Points Earned:</Text>
-                            <Text style={NumberStyle}>{props.Points}</Text>
-                        </View>
-                    </CardSection>
-                </Card>
-                <Card>
                     <CardSection style = {containerStyle}>
                         <View style={headerContentStyle}>
-                            <Text style={CategoryStyle}>Points Needed:</Text>
-                            <Text style={NumberStyle}>{math}</Text>
+                            <Text style={CategoryStyle}>Meetings Left:</Text>
+                            <Text style={NumberStyle}>{props.meetingsLeft}</Text>
                         </View>
                     </CardSection>
                 </Card>
@@ -60,4 +51,4 @@ const styles = {
         position: 'relative'
     }
 }
-export default Points;
+export default Meetings;

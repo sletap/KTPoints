@@ -2,6 +2,8 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import Points from './Points'
 import Header from './Header'
+import Meetings from './Meetings'
+import AboutMe from './Aboutme'
 import { createStackNavigator,createAppContainer, DrawerNavigator } from 'react-navigation';
 
 
@@ -36,7 +38,7 @@ class Main extends React.Component {
             console.log("Getting here")
             this.setState({
                 major: data['fields']['major']['stringValue'],
-                meetingsLeft: data['fields']['meetings_left']['stringValue'],
+                meetingsLeft: data['fields']['meetings_left']['integerValue'],
                 points: data['fields']['points']['integerValue'],
                 standing: data['fields']['standing']['stringValue'],
                 name: data['fields']['name']['stringValue'],
@@ -48,7 +50,7 @@ class Main extends React.Component {
           });
     }
 
-
+    
     static navigationOptions = {
         title: 'Home',
         headerStyle: {
@@ -61,8 +63,9 @@ class Main extends React.Component {
   render(){
     return (
         <View>
-            <Header HeaderText={this.state.name} navigation={this.props.navigation}/>
-            <Points/>
+            <Header HeaderText={this.state.name} navigation={this.props.navigation} />
+            <Points Points={this.state.points} />
+            <Meetings meetingsLeft={this.state.meetingsLeft} />
         </View>
     );
     }  

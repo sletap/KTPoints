@@ -1,7 +1,6 @@
 // Import Libraries for making a component
 import React from 'react';
 import { Text, View, Image } from 'react-native';
-import Login from './Login.js'
 import HeaderSection from './HeaderSection';
 import Button from './Button';
 
@@ -16,7 +15,7 @@ const Header = (props) => {
         <View style={HeaderContainerStyle}>
             <HeaderSection>
                 <Button 
-                    textStyle={textStyle}
+                    textStyle={buttonTextStyle}
                     buttonStyle={buttonStyle}
                     onPress={() => {navigation.navigate('MenuScreen')}}>
                     Menu
@@ -28,7 +27,7 @@ const Header = (props) => {
             <HeaderSection>
                 <Image 
                     style={profilePicStyle}
-                    source={require('./images/face.png')} 
+                    source={require('./images/vinay.png')} 
                 />
             </HeaderSection>
         </View>
@@ -50,7 +49,7 @@ const styles = {
         position: 'relative'
     },
     textStyle: {
-        fontSize: 20
+        fontSize: 26
     },
     profilePicStyle: {
         height: 40,
