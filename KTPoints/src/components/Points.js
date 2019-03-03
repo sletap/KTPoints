@@ -15,7 +15,7 @@ class Points extends Component {
                     <CardSection>
                         <View style={headerContentStyle}>
                             <Text style={PointTextStyle}>Points:</Text>
-                            <Text>10</Text>
+                            <Text>10 / 100</Text>
                         </View>
                     </CardSection>
                 </Card>
@@ -26,7 +26,7 @@ class Points extends Component {
 
 const styles = {
     headerContentStyle: {
-        flex: 1,
+        flex: 3,
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center'

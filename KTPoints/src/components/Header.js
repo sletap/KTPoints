@@ -8,7 +8,11 @@ import Button from './Button';
 
 // Make a component
 const Header = (props) => {
-    const { textStyle, HeaderContainerStyle, profilePicStyle } = styles;
+    const { 
+        textStyle, 
+        HeaderContainerStyle, 
+        profilePicStyle 
+    } = styles;
 
     return (
         <View style={HeaderContainerStyle}>
@@ -37,7 +41,7 @@ const styles = {
         justifyContent: 'space-around',
         alignItems: 'center',
         height: 60, 
-        paddingTop: 5, 
+        paddingTop: 20, 
         shadowColor: '#000', 
         shadowOffset: { width: 0, height: 2 }, 
         shadowOpacity: 0.2, 
@@ -48,8 +52,8 @@ const styles = {
         fontSize: 20
     },
     profilePicStyle: {
-        height: 40,
-        width: 40
+        height: 30,
+        width: 30
     }
 };
 
