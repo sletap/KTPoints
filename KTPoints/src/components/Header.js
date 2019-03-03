@@ -1,7 +1,10 @@
 // Import Libraries for making a component
 import React from 'react';
 import { Text, View, Image } from 'react-native';
+import { DrawerNavigator } from 'react-navigation';
+import Login from './Login.js'
 import HeaderSection from './HeaderSection';
+import Button from './Button';
 
 // Make a component
 const Header = (props) => {
@@ -10,7 +13,9 @@ const Header = (props) => {
     return (
         <View style={HeaderContainerStyle}>
             <HeaderSection>
-                <Text>Menu</Text>
+                <Button onPress={() => console.log('pressed')}>
+                    Menu
+                </Button>
             </HeaderSection>
             <HeaderSection>
                 <Text style={textStyle}>{props.HeaderText}</Text>
