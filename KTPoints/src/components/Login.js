@@ -7,6 +7,10 @@ import LoginForm from './LoginForm';
 class Login extends Component {
     static navigationOptions = {
         title: 'Welcome',
+        headerStyle: {
+            backgroundColor: '#2c3e50',
+        },
+        headerTintColor: '#fff',
     };
     render() {
         const {navigate} = this.props.navigation;
