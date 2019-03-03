@@ -14,6 +14,7 @@ import Main from './src/components/Main.js'
 import { createStackNavigator,createAppContainer } from 'react-navigation';
 
 
+
 const Navigator = createStackNavigator({
   LoginScreen: { screen: Login },
   MainScreen: {screen: Main},
@@ -22,6 +23,7 @@ const Navigator = createStackNavigator({
   initialRouteName: 'LoginScreen',
 }
 );
+
 
 const App = createAppContainer(Navigator);
 
