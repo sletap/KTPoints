@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, StyleSheet,Image,Text, ScrollView } from 'react-native';
+import { View, StyleSheet,Image,Text, ScrollView,Dimensions } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Header from './Header';
+import ProgressBarAnimated from 'react-native-progress-bar-animated';
 
 
 
@@ -14,7 +15,7 @@ class AboutMe extends Component {
     }
     
     render() {
-        
+        const barWidth = Dimensions.get('screen').width - 30;
         return (
             <ScrollView>
                 <View>
@@ -57,6 +58,20 @@ class AboutMe extends Component {
                     
                         <CardSection>
                             <Text style = {styles.text_style}>Meetings Left: {this.state.data.meetingsLeft}</Text>
+                        </CardSection>
+                    </Card>
+                    <Card>
+                        <CardSection>
+                            <Text style = {styles.text_style}> Points Progress: 
+                            </Text>
+                        </CardSection>
+
+                        <CardSection> 
+                            <ProgressBarAnimated
+                            width={barWidth}
+                            value={this.state.data.points}
+                            backgroundColorOnComplete="#6CC644"
+                            />
                         </CardSection>
                     </Card>
                 </View>
