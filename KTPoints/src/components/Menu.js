@@ -42,7 +42,23 @@ class Menu extends Component {
                         </CardSection>
                     </Card>
 
+                    <Card>
+                        <CardSection>
+                            <View style={styles.buttonContainer}>
+                                <Button 
+                                    buttonStyle={styles.loginButton}
+                                    textStyle={styles.buttonText}
+                                    onPress={() => navigate('LeadersScreen', {
+                                    data: this.props.navigation.state.params.data
+                                    })}
+                                >
+                                   LEADERS
+                                </Button>
+                            </View>
+                        </CardSection>
+                    </Card>
 
+                    
                     <Card>
                         <CardSection>
                             <View style={styles.buttonContainer}>
@@ -56,6 +72,7 @@ class Menu extends Component {
                             </View>
                         </CardSection>
                     </Card>
+                    
 
                     </View>
             </ScrollView>
