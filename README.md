@@ -16,4 +16,7 @@ A crossplatform KTP app made using react native
 
 # Instructions for PC:
 * Follow instructions at this link: https://facebook.github.io/react-native/docs/getting-started
+
+# Dependencies to Install:
+* ReactNavigation install somewhere on this site: https://reactnavigation.org/en/
 * To handle Scrolling on Login: npm i react-native-keyboard-aware-scroll-view --save

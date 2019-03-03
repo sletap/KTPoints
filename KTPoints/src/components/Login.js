@@ -6,7 +6,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 // create a component
 class Login extends Component {
     static navigationOptions = {
-        title: 'Welcome',
+        title: 'Login',
         headerStyle: {
             backgroundColor: '#2c3e50',
         },

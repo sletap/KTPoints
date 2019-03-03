@@ -11,7 +11,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import Login from './src/components/Login.js'
 import Main from './src/components/Main.js'
-import { createStackNavigator,createAppContainer } from 'react-navigation';
+import { createStackNavigator,createAppContainer, DrawerNavigator } from 'react-navigation';
 
 
 
