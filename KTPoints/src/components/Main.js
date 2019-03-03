@@ -17,7 +17,7 @@ class Main extends React.Component {
   render(){
     return (
         <View>
-            <Header/>
+            <Header navigation={this.props.navigation}/>
             <Points/>
         </View>
     );
@@ -25,3 +25,4 @@ class Main extends React.Component {
 }
 
 export default Main;
+

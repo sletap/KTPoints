@@ -1,7 +1,6 @@
 // Import Libraries for making a component
 import React from 'react';
 import { Text, View, Image } from 'react-native';
-import { DrawerNavigator } from 'react-navigation';
 import Login from './Login.js'
 import HeaderSection from './HeaderSection';
 import Button from './Button';
@@ -9,11 +8,11 @@ import Button from './Button';
 // Make a component
 const Header = (props) => {
     const { textStyle, HeaderContainerStyle, profilePicStyle } = styles;
-
+    const navigation = props.navigation;
     return (
         <View style={HeaderContainerStyle}>
             <HeaderSection>
-                <Button onPress={() => console.log('pressed')}>
+                <Button onPress={() => {navigation.navigate('MenuScreen')}}>
                     Menu
                 </Button>
             </HeaderSection>

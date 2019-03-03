@@ -9,8 +9,9 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import Login from './src/components/Login.js'
-import Main from './src/components/Main.js'
+import Login from './src/components/Login'
+import Main from './src/components/Main'
+import Menu from './src/components/Menu'
 import { createStackNavigator,createAppContainer, DrawerNavigator } from 'react-navigation';
 
 
@@ -18,6 +19,7 @@ import { createStackNavigator,createAppContainer, DrawerNavigator } from 'react-
 const Navigator = createStackNavigator({
   LoginScreen: { screen: Login },
   MainScreen: {screen: Main},
+  MenuScreen: {screen: Menu},
  },
  {
   initialRouteName: 'LoginScreen',
