@@ -3,6 +3,24 @@ import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Alert, Button ,StyleSheet ,StatusBar,KeyboardAvoidingView,Image} from 'react-native';
 
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import * as firebase from "firebase";
+
+async function signup(email, pass) {
+
+    try {
+        await firebase.auth()
+            .createUserWithEmailAndPassword(email, pass);
+  
+        console.log("Account created");
+  
+        // Navigate to the Home page, the user is auto logged in
+  
+    } catch (error) {
+        console.log(error.toString())
+    }
+  
+  }
+  
 // create a component
 class Login extends Component {
     state = {
@@ -18,6 +36,11 @@ class Login extends Component {
         },
         headerTintColor: '#fff',
     };
+
+    handleLogin = () => {
+        console.log("getting here")
+        signup(this.state.username, this.state.password)
+    }
 
     submitUsername = () => {
         console.log(this.state.username)
@@ -76,7 +99,7 @@ class Login extends Component {
                 </TouchableOpacity>  */}
                 <Button style={styles.buttonContainer}
                     title='Login'
-                    onPress={() => navigate('MainScreen')}
+                    onPress={() => {handleLogin(); navigate('MainScreen')}}
                     />
                </View>
                
