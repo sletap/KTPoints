@@ -44,11 +44,13 @@ const styles = {
     },
     CategoryStyle: {
         fontSize: 24,
-        fontWeight: '400'
+        fontWeight: '400',
+        color: '#fff'
     },
     NumberStyle: {
         fontSize: 20,
-        fontWeight: '200'
+        fontWeight: '200',
+        color: '#fff'
     },
     containerStyle: {
         // borderBottomWidth: 1,
