@@ -17,7 +17,9 @@ const Header = (props) => {
                 <Button 
                     textStyle={buttonTextStyle}
                     buttonStyle={buttonStyle}
-                    onPress={() => {navigation.navigate('MenuScreen')}}>
+                    onPress={() => {navigation.navigate('MenuScreen', {
+                        data: props.totalState
+                    })}}>
                     Menu
                 </Button>
             </HeaderSection>

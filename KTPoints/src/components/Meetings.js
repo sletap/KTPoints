@@ -39,7 +39,7 @@ const styles = {
     },
     NumberStyle: {
         fontSize: 20,
-        fontWeight: '250'
+        fontWeight: '200'
     },
     containerStyle: {
         // borderBottomWidth: 1,

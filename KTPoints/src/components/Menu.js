@@ -31,7 +31,9 @@ class Menu extends Component {
                             <Button 
                                 buttonStyle={styles.loginButton}
                                 textStyle={styles.buttonText}
-                                onPress={() => navigate('ProfileScreen')}
+                                onPress={() => navigate('ProfileScreen', {
+                                    data: this.props.navigation.state.params.data
+                                })}
                             >
                                 PROFILE
                             </Button>
