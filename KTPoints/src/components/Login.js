@@ -5,27 +5,14 @@ import { View, Text, TextInput, TouchableOpacity, Alert, Button ,StyleSheet ,Sta
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import * as firebase from "firebase";
 
-async function signup(email, pass) {
 
-    try {
-        await firebase.auth()
-            .createUserWithEmailAndPassword(email, pass);
-  
-        console.log("Account created");
-  
-        // Navigate to the Home page, the user is auto logged in
-  
-    } catch (error) {
-        console.log(error.toString())
-    }
-  
-  }
   
 // create a component
 class Login extends Component {
     state = {
         username: '',
         password: '',
+        auth: 1, 
     }
     
 
@@ -37,9 +24,29 @@ class Login extends Component {
         headerTintColor: '#fff',
     };
 
+
     handleLogin = () => {
-        console.log("getting here")
-        signup(this.state.username, this.state.password)
+        const {navigate} = this.props.navigation;
+        console.log("In handle login")
+        var legit = 10
+        firebase.auth().signInWithEmailAndPassword(this.state.username, this.state.password).then((response) => {
+            // Handle Errors here.
+            navigate('MainScreen')
+            console.log("Right")
+            legit = 0
+            // ...
+          }).catch(function(error) {
+            Alert.alert(
+                'Invalid Login Credentials',
+                'Please Try Again',
+            );   // Using this line
+        });
+    }
+
+    invalidLogin = () => {
+        Alert.alert(
+            'Invalid Login Credentials',
+            'Please Try Again',);
     }
 
     submitUsername = () => {
@@ -99,7 +106,7 @@ class Login extends Component {
                 </TouchableOpacity>  */}
                 <Button style={styles.buttonContainer}
                     title='Login'
-                    onPress={() => {this.handleLogin(); navigate('MainScreen')}}
+                    onPress={() => {this.handleLogin();}}
                     />
                </View>
                
