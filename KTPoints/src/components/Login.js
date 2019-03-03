@@ -31,7 +31,10 @@ class Login extends Component {
         var legit = 10
         firebase.auth().signInWithEmailAndPassword(this.state.username, this.state.password).then((response) => {
             // Handle Errors here.
-            navigate('MainScreen')
+            uniq = this.state.username.split('@')[0]
+            navigate('MainScreen', {
+                uniqname: uniq,
+            })
             console.log("Right")
             legit = 0
             // ...
