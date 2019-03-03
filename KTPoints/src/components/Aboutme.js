@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { View, StyleSheet,Image,Text } from 'react-native';
+import { View, StyleSheet,Image,Text, ScrollView } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
-import Button from './Button';
-import axios from 'axios'
 import Header from './Header';
 
 
@@ -18,45 +16,51 @@ class AboutMe extends Component {
     render() {
         
         return (
-            <View>
-                <Header HeaderText={this.state.name} />
-                <Card>
-                    <CardSection>
-                    <Image
-                       style={{width: 100, height: 200}}
-                       source={{uri: 'https://scontent.fluk1-1.fna.fbcdn.net/v/t1.0-9/32453143_1208787859257914_2538505098489757696_n.jpg?_nc_cat=106&_nc_ht=scontent.fluk1-1.fna&oh=680a71abc19864319b03248f849461eb&oe=5D236440'}}
-                       />
-                       <Text>
-                        <Text style = {styles.text_style}>Major: {this.state.data.major} 
-                        </Text>
-                        {'\n'}
-                        <Text style = {styles.text_style}>Grade: {this.state.data.year} 
-                        </Text>
-                        {'\n'}
-                        <Text style = {styles.text_style}>Standing: {this.state.data.standing}
-                        </Text>
-                        {'\n'}
-                        <Text style = {styles.text_style}> Pledge Class: {this.state.data.pc}
-                        </Text>
-                        {'\n'}
-                       </Text>
-                    </CardSection>
-                </Card>
-                <Card>
-                    <CardSection>
-                        <Text>
-                        <Text style = {styles.text_style}>Current Points: {this.state.data.points}</Text>
-                        {'\n'}
-                        <Text style = {styles.text_style}>Meetings Left: {this.state.data.meetingsLeft}</Text>
-                        {'\n'}
-                       </Text>
-                    </CardSection>
-                </Card>
-                <Card>
+            <ScrollView>
+                <View>
+                    <Header HeaderText={this.state.data.name} 
+                            navigation={this.props.navigation}
+                            totalState={this.props.navigation.state.params.data}/>
+                    <Card>
+                        <CardSection>
+                            <Image 
+                            style={{height: 300, flex: 1, width: null}}
+                            source={{uri: 'https://scontent.fluk1-1.fna.fbcdn.net/v/t1.0-9/32453143_1208787859257914_2538505098489757696_n.jpg?_nc_cat=106&_nc_ht=scontent.fluk1-1.fna&oh=680a71abc19864319b03248f849461eb&oe=5D236440'}}
+                            />
+                        </CardSection>
+                    </Card>
+                    <Card>
+                        <CardSection>
+                            <Text style = {styles.text_style}>Major: {this.state.data.major} 
+                            </Text>
+                        </CardSection>
 
-                </Card>
-            </View>
-            
+                        <CardSection>
+                            <Text style = {styles.text_style}>Grade: {this.state.data.year} 
+                            </Text>
+                        </CardSection>
+
+                        <CardSection>
+                            <Text style = {styles.text_style}>Standing: {this.state.data.standing}
+                            </Text>
+                        </CardSection>
+
+                        <CardSection>
+                            <Text style = {styles.text_style}>Pledge Class: {this.state.data.pc}
+                            </Text>
+                        </CardSection>
+                    </Card>
+                    <Card>
+                        <CardSection>
+                            <Text style = {styles.text_style}>Current Points: {this.state.data.points}</Text>
+                        </CardSection>
+                    
+                        <CardSection>
+                            <Text style = {styles.text_style}>Meetings Left: {this.state.data.meetingsLeft}</Text>
+                        </CardSection>
+                    </Card>
+                </View>
+            </ScrollView>
         );
     }
 
