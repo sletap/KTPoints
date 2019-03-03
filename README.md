@@ -22,3 +22,4 @@ A crossplatform KTP app made using react native
 * To handle Scrolling on Login: npm i react-native-keyboard-aware-scroll-view --save
 * To handle link routing/navigation: npm install --save react-navigation
 * To handle firebase installation: npm install --save react-native-firebase
+* To handle date time stuff: npm install moment --save
