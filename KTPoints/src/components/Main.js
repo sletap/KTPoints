@@ -63,7 +63,7 @@ class Main extends React.Component {
   render(){
     return (
         <View>
-            <Header HeaderText={this.state.name} navigation={this.props.navigation} />
+            <Header totalState={this.state} HeaderText={this.state.name} navigation={this.props.navigation} />
             <Points Points={this.state.points} />
             <Meetings meetingsLeft={this.state.meetingsLeft} />
         </View>

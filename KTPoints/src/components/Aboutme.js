@@ -6,23 +6,12 @@ import Button from './Button';
 import axios from 'axios'
 
 
-class AboutMe extends Component {
-    state = {
-        UserID:'mayakhanna4',
-        First_Name: 'Maya',
-        Last_Name: 'Khanna',
-        Brotherhood_Standing: 'Active',
-        Major: 'Computer Science Engineering',
-        Class_Standing: 'Sophmore',
-        Pledge_Class: 'Xi',
-        Current_Points: '1000000',
-        Meetings_Left: '18',
-        Img_url:'',
 
-    }
+class AboutMe extends Component {
+    state = {data: this.props.navigation.state.params.data};
+
     componentWillMount(){
-        axios.get('https://epss.ucla.edu/media/images/profile_pictures/default.jpg')
-        .then(response => this.setState({Img_url: response.data}));
+       console.log(this.state.data);
     }
     
     render() {
