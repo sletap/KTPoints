@@ -9,6 +9,7 @@ class Login extends Component {
         username: '',
         password: '',
     }
+    
 
     static navigationOptions = {
         title: 'Login',
@@ -18,9 +19,20 @@ class Login extends Component {
         headerTintColor: '#fff',
     };
 
+    submitUsername = () => {
+        console.log(this.state.username)
+    }
 
     updateUsername = (text) => {
-        console.log(text)
+        this.setState({username: text})
+    }
+
+    submitPassword = () => {
+        console.log(this.state.password)
+    }
+
+    updatePassword = (text) => {
+        this.setState({password: text})
     }
 
     render() {
@@ -41,7 +53,8 @@ class Login extends Component {
                <StatusBar barStyle="light-content"/>
                 <TextInput style = {styles.input} 
                             autoCapitalize="none" 
-                            onSubmitEditing={(text) => {this.passwordInput.focus(); this.updateUsername(text)}} 
+                            onSubmitEditing={() => {this.passwordInput.focus(); this.submitUsername()}}
+                            onChangeText={(username) => this.updateUsername(username)} 
                             autoCorrect={false} 
                             keyboardType='email-address' 
                             returnKeyType="next" 
@@ -51,6 +64,8 @@ class Login extends Component {
                 <TextInput style = {styles.input} 
                            value={this.state.password}  
                            returnKeyType="go" ref={(input)=> this.passwordInput = input} 
+                           onChangeText={(password) => this.updatePassword(password)} 
+                           onSubmitEditing={() => { this.submitPassword();}}
                            placeholder='Password' 
                            placeholderTextColor='rgba(225,225,225,0.7)' 
                            secureTextEntry/>
