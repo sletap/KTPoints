@@ -23,8 +23,7 @@ class Main extends React.Component {
 
     componentWillMount() {
         url = 'https://firestore.googleapis.com/v1/projects/ktpoints-68071/databases/(default)/documents/users/';
-        var storage = firebase.storage();
-        var storageRef = storage.ref('profile_pictures/edknight.jpg');
+
         // var imagesRef = storageRef.child('profile_pictures');
 
         // var pathReference = storage.ref('images/stars.jpg');
@@ -37,8 +36,6 @@ class Main extends React.Component {
             return response.json();
           })
           .then((data) => {
-            console.log(data);
-            console.log("Getting here")
             this.setState({
                 major: data['fields']['major']['stringValue'],
                 meetingsLeft: data['fields']['meetings_left']['stringValue'],
@@ -49,26 +46,43 @@ class Main extends React.Component {
                 pc: data['fields']['pledge_class']['stringValue']
 
             })
-            console.log(this.state)
           });
 
+        var storage = firebase.storage();
+        console.log(storage)
         
-        storageRef.getDownloadURL()
-        .then(function(url) {
-        // `url` is the download URL for 'images/stars.jpg'
-        // var img = document.getElementById('myimg');
-        // img.src = url;
-        this.setState({
-            img: url
+        var storageRef = storage.ref('profile_pictures/edknight.jpg');
+        var gsUrl = 'gs://ktpoints-68071.appspot.com/profile_pictures/'
+        gsUrl = gsUrl.concat(this.props.navigation.state.params.uniqname)
+        gsUrl = gsUrl.concat('.jpg')
+        console.log(gsUrl)
+        var gsReference = storage.refFromURL(gsUrl)
+        gsReference.getDownloadURL().then((data) => {
+            this.setState({img: data})
         })
 
-        }).catch(function(error) {
-            console.log(error.statusText);
-            // this.setState({
-            //     img: 'space.jpg'
-            // })
-            // Handle any errors
-        });
+        
+       
+
+
+
+        
+        // storageRef.getDownloadURL()
+        // .then(function(url) {
+        // // `url` is the download URL for 'images/stars.jpg'
+        // // var img = document.getElementById('myimg');
+        // // img.src = url;
+        // this.setState({
+        //     img: url
+        // })
+        // console.log("Correctly handling downloadUrl")
+        // }).catch(function(error) {
+        //     console.log(error.statusText);
+        //     // this.setState({
+        //     //     img: 'space.jpg'
+        //     // })
+        //     // Handle any errors
+        // });
           
     }
 
@@ -84,10 +98,8 @@ class Main extends React.Component {
   render(){
     return (
         <View>
-            <Header HeaderText={this.state.name} navigation={this.props.navigation}/>
+            <Header imgUrl={this.state.img} HeaderText={this.state.name} navigation={this.props.navigation}/>
             <Points/>
-            <Text>{this.state.img}</Text>
-            <Text>{this.state.name}</Text>
         </View>
     );
     }  
