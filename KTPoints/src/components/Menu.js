@@ -25,6 +25,20 @@ class Menu extends Component {
                     </CardSection>
                 </Card>
 
+                <Card>
+                    <CardSection>
+                        <View style={styles.buttonContainer}>
+                            <Button 
+                                buttonStyle={styles.loginButton}
+                                textStyle={styles.buttonText}
+                                onPress={() => navigate('ProfileScreen')}
+                            >
+                                PROFILE
+                            </Button>
+                        </View>
+                    </CardSection>
+                </Card>
+
 
                 <Card>
                     <CardSection>
