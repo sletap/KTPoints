@@ -23,3 +23,4 @@ A crossplatform KTP app made using react native
 * To handle link routing/navigation: npm install --save react-navigation
 * To handle firebase calls: npm install --save firebase
 * To display images correctly: npm install --save axios
+* For displaying data: npm install --save react-native-progress-bar-animated
