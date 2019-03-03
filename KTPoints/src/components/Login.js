@@ -5,6 +5,11 @@ import { View, Text, TextInput, TouchableOpacity, Alert, Button ,StyleSheet ,Sta
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 // create a component
 class Login extends Component {
+    state = {
+        username: '',
+        password: '',
+    }
+
     static navigationOptions = {
         title: 'Login',
         headerStyle: {
@@ -14,9 +19,8 @@ class Login extends Component {
     };
 
 
-    updateUsername = () => {
-
-        this.passwordInput.focus()
+    updateUsername = (text) => {
+        console.log(text)
     }
 
     render() {
@@ -37,14 +41,15 @@ class Login extends Component {
                <StatusBar barStyle="light-content"/>
                 <TextInput style = {styles.input} 
                             autoCapitalize="none" 
-                            onSubmitEditing={() => {this.passwordInput.focus()}} 
+                            onSubmitEditing={(text) => {this.passwordInput.focus(); this.updateUsername(text)}} 
                             autoCorrect={false} 
                             keyboardType='email-address' 
                             returnKeyType="next" 
                             placeholder='Email or Mobile Num' 
                             placeholderTextColor='rgba(225,225,225,0.7)'/>
 
-                <TextInput style = {styles.input}   
+                <TextInput style = {styles.input} 
+                           value={this.state.password}  
                            returnKeyType="go" ref={(input)=> this.passwordInput = input} 
                            placeholder='Password' 
                            placeholderTextColor='rgba(225,225,225,0.7)' 
