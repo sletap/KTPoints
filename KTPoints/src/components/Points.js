@@ -7,12 +7,13 @@ class Points extends Component {
     render() {
         const { 
             headerContentStyle,
-            PointTextStyle
+            PointTextStyle,
+            containerStyle
         } = styles;
         return (
             <View>
                 <Card>
-                    <CardSection>
+                    <CardSection style={containerStyle}>
                         <View style={headerContentStyle}>
                             <Text style={PointTextStyle}>Points:</Text>
                             <Text>10</Text>
@@ -34,5 +35,14 @@ const styles = {
     PointTextStyle: {
         fontSize: 18
     },
+    containerStyle: {
+        // borderBottomWidth: 1,
+        padding: 5,
+        backgroundColor: '#fff',
+        justifyContent: 'flex-start',
+        flexDirection: 'row',
+        borderColor: '#ddd',
+        position: 'relative'
+    }
 }
 export default Points;
