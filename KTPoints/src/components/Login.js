@@ -1,8 +1,8 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Alert, Button ,StyleSheet ,StatusBar,KeyboardAvoidingView,Image} from 'react-native';
-import LoginForm from './LoginForm';
 
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 // create a component
 class Login extends Component {
     static navigationOptions = {
@@ -15,7 +15,13 @@ class Login extends Component {
     render() {
         const {navigate} = this.props.navigation;
         return (
-        <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <KeyboardAwareScrollView 
+            style={{ backgroundColor: '#4c69a5' }}
+            resetScrollToCoords={{ x: 0, y: 0 }}
+            contentContainerStyle={styles.container}
+            scrollEnabled={false}
+            extraScrollHeight={20}
+        >
                 <View style={styles.loginContainer}>
                     <Image source={require('./images/ktpLogo.png')}  style={styles.logo}/>
                 </View>
@@ -47,7 +53,7 @@ class Login extends Component {
                </View>
                
          
-            </KeyboardAvoidingView>
+            </KeyboardAwareScrollView>
         );
     }
 }
@@ -64,6 +70,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     formContainer:{
+        paddingBottom: 10,
         flexGrow: 1,
         justifyContent: 'center'
     },
