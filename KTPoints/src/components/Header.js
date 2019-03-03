@@ -7,12 +7,18 @@ import Button from './Button';
 
 // Make a component
 const Header = (props) => {
-    const { textStyle, HeaderContainerStyle, profilePicStyle } = styles;
+    const { textStyle, HeaderContainerStyle, 
+            profilePicStyle, buttonStyle, 
+            buttonTextStyle } = styles;
+
     const navigation = props.navigation;
     return (
         <View style={HeaderContainerStyle}>
             <HeaderSection>
-                <Button onPress={() => {navigation.navigate('MenuScreen')}}>
+                <Button 
+                    textStyle={textStyle}
+                    buttonStyle={buttonStyle}
+                    onPress={() => {navigation.navigate('MenuScreen')}}>
                     Menu
                 </Button>
             </HeaderSection>
@@ -49,6 +55,19 @@ const styles = {
     profilePicStyle: {
         height: 40,
         width: 40
+    },
+    buttonStyle: {
+        backgroundColor: '#F8F8F8',
+        borderRadius: 5,
+        borderColor: '#007aff',
+        marginLeft: 5,
+        marginRight: 5,
+    },
+    buttonTextStyle: {
+        alignSelf: 'center',
+        fontWeight: '600',
+        paddingTop: 10,
+        paddingBottom: 10,
     }
 };
 

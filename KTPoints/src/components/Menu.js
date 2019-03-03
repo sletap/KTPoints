@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
-
+import Header from './Header';
 
 class Menu extends Component {
     
@@ -13,22 +13,33 @@ class Menu extends Component {
             <View>
                 <Card>
                     <CardSection>
-                        <Button style={styles.buttonContainer}
-                            onPress={() => navigate('MainScreen')}
-                        >
-                        Main
-                        </Button>
+                        <View style={styles.buttonContainer}>
+                            <Button 
+                                buttonStyle={styles.loginButton}
+                                textStyle={styles.buttonText}
+                                onPress={() => navigate('MainScreen')}
+                            >
+                                MAIN
+                            </Button>
+                        </View>
                     </CardSection>
                 </Card>
+
+
                 <Card>
                     <CardSection>
-                        <Button style={styles.buttonContainer}
-                            onPress={() => navigate('LoginScreen')}
-                        >
-                        Logout
-                        </Button>
+                        <View style={styles.buttonContainer}>
+                            <Button 
+                                buttonStyle={styles.loginButton}
+                                textStyle={styles.buttonText}
+                                onPress={() => navigate('LoginScreen')}
+                            >
+                                LOG OUT
+                            </Button>
+                        </View>
                     </CardSection>
                 </Card>
+
             </View>
         );
     }
@@ -38,15 +49,18 @@ const styles = StyleSheet.create({
     buttonContainer:{
         backgroundColor: '#2980b6',
         paddingVertical: 20,
+        flex: 1,
+        width: null
     },
     buttonText:{
         color: '#FFF',
         textAlign: 'center',
-        fontWeight: '700'
+        fontWeight: '700',
+        fontSize: 20
     }, 
     loginButton:{
       backgroundColor:  '#2980b6',
-       color: '#fff'
+      color: '#FFF'
     }
 });
 
