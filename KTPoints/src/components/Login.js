@@ -75,9 +75,9 @@ class Login extends Component {
             style={{ backgroundColor: '#4c69a5' }}
             resetScrollToCoords={{ x: 0, y: 0 }}
             contentContainerStyle={styles.container}
-            scrollEnabled={false}
+            scrollEnabled={true}
             extraScrollHeight={20}
-            enableOnAndroid={true}
+            enableOnAndroid={false}
         >
                 <View style={styles.loginContainer}>
                     <Image source={require('./images/ktpLogo.png')}  style={styles.logo}/>
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
         color: '#fff'
     },
     buttonContainer:{
-        backgroundColor: '#2980b6',
+        backgroundColor: '#fff',
         paddingVertical: 20,
     },
     buttonText:{
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
         fontWeight: '700'
     }, 
     loginButton:{
-      backgroundColor:  '#2980b6',
+      backgroundColor:  '#fff',
        color: '#fff'
     }
 });

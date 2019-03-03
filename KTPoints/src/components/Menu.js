@@ -82,7 +82,7 @@ class Menu extends Component {
 
 const styles = StyleSheet.create({
     buttonContainer:{
-        backgroundColor: '#2980b6',
+        backgroundColor: '#2c3e50',
         paddingVertical: 20,
         flex: 1,
         width: null
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
         fontSize: 20
     }, 
     loginButton:{
-      backgroundColor:  '#2980b6',
+      backgroundColor:  '#2c3e50',
       color: '#FFF'
     }
 });

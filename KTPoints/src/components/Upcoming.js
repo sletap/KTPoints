@@ -67,32 +67,32 @@ class Upcoming extends Component {
 }
 const styles = StyleSheet.create({
     buttonContainer:{
-        backgroundColor: '#2980b6',
+        backgroundColor: '#2c3e50',
         paddingVertical: 20,
     },
     buttonText:{
-        color: '#2980b6',
+        color: '#2c3e50',
         textAlign: 'center',
         fontWeight: '700'
     }, 
     loginButton:{
-      backgroundColor:  '#2980b6',
+      backgroundColor:  '#2c3e50',
        color: '#fff'
     },
     text_style:{
          fontSize: 18,
          textAlign: 'center',
-         color: '#2980b6'
+         color: '#2c3e50'
       },
     header_text:{
         textDecorationLine: 'underline',
         fontSize: 24,
         textAlign: 'center',
-        color: '#fff'
+        color: '#2c3e50'
     },
       headerContentStyle: {
         flex: 1,
-        backgroundColor: '#2980b6',
+        backgroundColor: '#2c3e50',
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center' 
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     containerStyle: {
         borderBottomWidth: 1,
         padding: 5,
-        backgroundColor: '#2980b6',
+        backgroundColor: '#2c3e50',
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
         flexDirection: 'row',

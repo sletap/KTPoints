@@ -26,7 +26,7 @@ class AboutMe extends Component {
                         <CardSection>
                             <Image 
                             style={{height: 300, flex: 1, width: null}}
-                            source={{uri: 'https://scontent.fluk1-1.fna.fbcdn.net/v/t1.0-9/32453143_1208787859257914_2538505098489757696_n.jpg?_nc_cat=106&_nc_ht=scontent.fluk1-1.fna&oh=680a71abc19864319b03248f849461eb&oe=5D236440'}}
+                            source={{uri: this.state.data.img}}
                             />
                         </CardSection>
                     </Card>
@@ -68,9 +68,11 @@ class AboutMe extends Component {
 
                         <CardSection> 
                             <ProgressBarAnimated
+                            backgroundColor={'#fff'}
+                            maxValue={100}
                             width={barWidth}
                             value={this.state.data.points}
-                            backgroundColorOnComplete="#6CC644"
+                            backgroundColorOnComplete="#7CFC00"
                             />
                         </CardSection>
                     </Card>
@@ -82,7 +84,7 @@ class AboutMe extends Component {
 }
 const styles = StyleSheet.create({
     buttonContainer:{
-        backgroundColor: '#2980b6',
+        backgroundColor: '#2c3e50',
         paddingVertical: 20,
     },
     buttonText:{
@@ -91,13 +93,13 @@ const styles = StyleSheet.create({
         fontWeight: '700'
     }, 
     loginButton:{
-      backgroundColor:  '#2980b6',
+      backgroundColor:  '#2c3e50',
        color: '#fff'
     },
     text_style:{
          fontSize: 24,
          textAlign: 'center',
-         color: '#000'
+         color: '#fff'
       }
 });
 
