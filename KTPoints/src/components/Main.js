@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 import Points from './Points'
 import Header from './Header'
 import { createStackNavigator,createAppContainer, DrawerNavigator } from 'react-navigation';
-
+import * as firebase from 'firebase';
 
 class Main extends React.Component {
     constructor(props) {
@@ -16,13 +16,18 @@ class Main extends React.Component {
             name: '',
             year: '',
             pc: '',
-            url: ''
-
+            url: '',
+            img: ''
         }
     }
 
     componentWillMount() {
         url = 'https://firestore.googleapis.com/v1/projects/ktpoints-68071/databases/(default)/documents/users/';
+        var storage = firebase.storage();
+        var storageRef = storage.ref('profile_pictures/edknight.jpg');
+        // var imagesRef = storageRef.child('profile_pictures');
+
+        // var pathReference = storage.ref('images/stars.jpg');
         apiCall = url.concat(this.props.navigation.state.params.uniqname);
         this.setState({url: apiCall});
         console.log(this.state.url);
@@ -46,8 +51,26 @@ class Main extends React.Component {
             })
             console.log(this.state)
           });
-    }
 
+        
+        storageRef.getDownloadURL()
+        .then(function(url) {
+        // `url` is the download URL for 'images/stars.jpg'
+        // var img = document.getElementById('myimg');
+        // img.src = url;
+        this.setState({
+            img: url
+        })
+
+        }).catch(function(error) {
+            console.log(error.statusText);
+            // this.setState({
+            //     img: 'space.jpg'
+            // })
+            // Handle any errors
+        });
+          
+    }
 
     static navigationOptions = {
         title: 'Home',
@@ -63,6 +86,8 @@ class Main extends React.Component {
         <View>
             <Header HeaderText={this.state.name} navigation={this.props.navigation}/>
             <Points/>
+            <Text>{this.state.img}</Text>
+            <Text>{this.state.name}</Text>
         </View>
     );
     }  
