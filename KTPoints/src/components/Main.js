@@ -11,12 +11,13 @@ class Main extends React.Component {
             backgroundColor: '#2c3e50',
         },
         headerTintColor: '#fff',
+        headerLeft: null
     };
 
   render(){
     return (
         <View>
-            <Header HeaderText='Welcome User!'/>
+            <Header/>
             <Points/>
         </View>
     );

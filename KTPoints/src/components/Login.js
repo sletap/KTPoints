@@ -12,6 +12,13 @@ class Login extends Component {
         },
         headerTintColor: '#fff',
     };
+
+
+    updateUsername = () => {
+
+        this.passwordInput.focus()
+    }
+
     render() {
         const {navigate} = this.props.navigation;
         return (
@@ -21,6 +28,7 @@ class Login extends Component {
             contentContainerStyle={styles.container}
             scrollEnabled={false}
             extraScrollHeight={20}
+            enableOnAndroid={true}
         >
                 <View style={styles.loginContainer}>
                     <Image source={require('./images/ktpLogo.png')}  style={styles.logo}/>
@@ -29,7 +37,7 @@ class Login extends Component {
                <StatusBar barStyle="light-content"/>
                 <TextInput style = {styles.input} 
                             autoCapitalize="none" 
-                            onSubmitEditing={() => this.passwordInput.focus()} 
+                            onSubmitEditing={() => {this.passwordInput.focus()}} 
                             autoCorrect={false} 
                             keyboardType='email-address' 
                             returnKeyType="next" 
