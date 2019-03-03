@@ -51,7 +51,7 @@ class Leaders extends Component{
           <View>
               <Card style={styles.containerStyle}>
                   <CardSection style={styles.containerStyle}>
-                      <Text>{bro['fields']['name']['stringValue']}</Text>
+                      <Text style={styles.text_style}>{bro['fields']['name']['stringValue']}</Text>
                   </CardSection>
                   <CardSection style={styles.containerStyle}>
                        <Text>{bro['fields']["points"]["integerValue"]}</Text>
@@ -61,10 +61,10 @@ class Leaders extends Component{
           </View>
       ));
         return (
-        <View>
-            <Text style={styles.header_text}>LeaderBoard</Text>
+        <ScrollView>
+            <Text style={styles.header_text}>Leaderboard</Text>
             {listleaders}
-        </View>
+        </ScrollView>
         );
         }        
 }
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     text_style:{
          fontSize: 18,
          textAlign: 'center',
-         color: '#2980b6'
+         color: '#000'
       },
     header_text:{
         textDecorationLine: 'underline',

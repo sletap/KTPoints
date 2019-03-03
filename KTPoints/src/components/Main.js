@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 import Points from './Points'
 import Header from './Header'
 import Meetings from './Meetings'
@@ -73,19 +73,21 @@ class Main extends React.Component {
 
   render(){
     return (
-        <View style={styles.containerStyle}>
-            <Header totalState={this.state} HeaderText={this.state.name} navigation={this.props.navigation} />
-            <Points Points={this.state.points} />
-            <Meetings meetingsLeft={this.state.meetingsLeft} />
-            <Upcoming tasks={this.state.tasks}/>
-        </View>
+        <ScrollView>
+            <View style={styles.containerStyle}>
+                <Header totalState={this.state} HeaderText={this.state.name} navigation={this.props.navigation} />
+                <Points Points={this.state.points} />
+                <Meetings meetingsLeft={this.state.meetingsLeft} />
+                <Upcoming tasks={this.state.tasks}/>
+            </View>
+        </ScrollView>
     );
     }  
 }
 
 const styles = {
     containerStyle: {
-        backgroundColor: '#2980b6',
+        backgroundColor: '#fff',
     }
 };
 
