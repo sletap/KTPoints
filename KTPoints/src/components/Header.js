@@ -29,7 +29,7 @@ const Header = (props) => {
             <HeaderSection>
                 <Image 
                     style={profilePicStyle}
-                    source={require('./images/vinay.png')} 
+                    source={{uri: props.imgUrl}} 
                 />
             </HeaderSection>
         </View>

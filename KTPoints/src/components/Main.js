@@ -6,7 +6,7 @@ import Meetings from './Meetings'
 import Upcoming from './Upcoming'
 import AboutMe from './Aboutme'
 import { createStackNavigator,createAppContainer, DrawerNavigator } from 'react-navigation';
-
+import * as firebase from 'firebase';
 
 class Main extends React.Component {
     constructor(props) {
@@ -20,7 +20,8 @@ class Main extends React.Component {
             year: '',
             pc: '',
             url: '',
-            tasks: []
+            tasks: [],
+            img: ''
 
         }
     }
@@ -46,7 +47,6 @@ class Main extends React.Component {
                 pc: data['fields']['pledge_class']['stringValue']
 
             })
-            console.log(this.state)
           });
 
           tasksUrl = 'https://firestore.googleapis.com/v1/projects/ktpoints-68071/databases/(default)/documents/tasks/';
@@ -58,6 +58,19 @@ class Main extends React.Component {
           .then((data) => {
               this.setState({tasks: data['documents']})
               console.log(this.state)
+          });
+
+          var storage = firebase.storage();
+          console.log(storage)
+          
+          var storageRef = storage.ref('profile_pictures/edknight.jpg');
+          var gsUrl = 'gs://ktpoints-68071.appspot.com/profile_pictures/'
+          gsUrl = gsUrl.concat(this.props.navigation.state.params.uniqname)
+          gsUrl = gsUrl.concat('.jpg')
+          console.log(gsUrl)
+          var gsReference = storage.refFromURL(gsUrl)
+          gsReference.getDownloadURL().then((data) => {
+              this.setState({img: data})
           })
     }
 
@@ -75,7 +88,7 @@ class Main extends React.Component {
     return (
         <ScrollView>
             <View style={styles.containerStyle}>
-                <Header totalState={this.state} HeaderText={this.state.name} navigation={this.props.navigation} />
+                <Header imgUrl={this.state.img} totalState={this.state} HeaderText={this.state.name} navigation={this.props.navigation} />
                 <Points Points={this.state.points} />
                 <Meetings meetingsLeft={this.state.meetingsLeft} />
                 <Upcoming tasks={this.state.tasks}/>
