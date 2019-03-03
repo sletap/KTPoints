@@ -17,7 +17,7 @@ class Main extends React.Component {
   render(){
     return (
         <View>
-            <Header navigation={this.props.navigation}/>
+            <Header HeaderText={'Testing'} navigation={this.props.navigation}/>
             <Points/>
         </View>
     );
