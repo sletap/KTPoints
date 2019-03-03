@@ -20,3 +20,5 @@ A crossplatform KTP app made using react native
 # Dependencies to Install:
 * ReactNavigation install somewhere on this site: https://reactnavigation.org/en/
 * To handle Scrolling on Login: npm i react-native-keyboard-aware-scroll-view --save
+* To handle link routing/navigation: npm install --save react-navigation
+* To handle firebase installation: npm install --save react-native-firebase
