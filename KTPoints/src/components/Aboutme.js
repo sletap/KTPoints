@@ -27,16 +27,16 @@ class AboutMe extends Component {
                        source={{uri: 'https://scontent.fluk1-1.fna.fbcdn.net/v/t1.0-9/32453143_1208787859257914_2538505098489757696_n.jpg?_nc_cat=106&_nc_ht=scontent.fluk1-1.fna&oh=680a71abc19864319b03248f849461eb&oe=5D236440'}}
                        />
                        <Text>
-                        <Text style = {styles.text_style}>Major: {this.state.Major} 
+                        <Text style = {styles.text_style}>Major: {this.state.data.major} 
                         </Text>
                         {'\n'}
-                        <Text style = {styles.text_style}>Grade: {this.state.Class_Standing} 
+                        <Text style = {styles.text_style}>Grade: {this.state.data.year} 
                         </Text>
                         {'\n'}
-                        <Text style = {styles.text_style}>Standing: {this.state.Brotherhood_Standing}
+                        <Text style = {styles.text_style}>Standing: {this.state.data.standing}
                         </Text>
                         {'\n'}
-                        <Text style = {styles.text_style}> Pledge Class: {this.state.Pledge_Class}
+                        <Text style = {styles.text_style}> Pledge Class: {this.state.data.pc}
                         </Text>
                         {'\n'}
                        </Text>
@@ -45,9 +45,9 @@ class AboutMe extends Component {
                 <Card>
                     <CardSection>
                         <Text>
-                        <Text style = {styles.text_style}>Current Points: {this.state.Current_Points}</Text>
+                        <Text style = {styles.text_style}>Current Points: {this.state.data.points}</Text>
                         {'\n'}
-                        <Text style = {styles.text_style}>Meetings Left: {this.state.Meetings_Left}</Text>
+                        <Text style = {styles.text_style}>Meetings Left: {this.state.data.meetingsLeft}</Text>
                         {'\n'}
                        </Text>
                     </CardSection>
