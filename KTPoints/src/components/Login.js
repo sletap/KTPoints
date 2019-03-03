@@ -3,11 +3,16 @@ import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Alert, Button ,StyleSheet ,StatusBar,KeyboardAvoidingView,Image} from 'react-native';
 
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import * as firebase from "firebase";
+
+
+  
 // create a component
 class Login extends Component {
     state = {
         username: '',
         password: '',
+        auth: 1, 
     }
     
 
@@ -18,6 +23,31 @@ class Login extends Component {
         },
         headerTintColor: '#fff',
     };
+
+
+    handleLogin = () => {
+        const {navigate} = this.props.navigation;
+        console.log("In handle login")
+        var legit = 10
+        firebase.auth().signInWithEmailAndPassword(this.state.username, this.state.password).then((response) => {
+            // Handle Errors here.
+            navigate('MainScreen')
+            console.log("Right")
+            legit = 0
+            // ...
+          }).catch(function(error) {
+            Alert.alert(
+                'Invalid Login Credentials',
+                'Please Try Again',
+            );   // Using this line
+        });
+    }
+
+    invalidLogin = () => {
+        Alert.alert(
+            'Invalid Login Credentials',
+            'Please Try Again',);
+    }
 
     submitUsername = () => {
         console.log(this.state.username)
@@ -76,7 +106,7 @@ class Login extends Component {
                 </TouchableOpacity>  */}
                 <Button style={styles.buttonContainer}
                     title='Login'
-                    onPress={() => navigate('MainScreen')}
+                    onPress={() => {this.handleLogin();}}
                     />
                </View>
                

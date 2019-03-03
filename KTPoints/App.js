@@ -9,10 +9,20 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import Login from './src/components/Login'
-import Main from './src/components/Main'
-import Menu from './src/components/Menu'
+import Login from './src/components/Login.js'
+import Main from './src/components/Main.js'
+import Menu from './src/components/Menu.js'
 import { createStackNavigator,createAppContainer, DrawerNavigator } from 'react-navigation';
+import * as firebase from "firebase";
+
+firebase.initializeApp({
+  apiKey: "AIzaSyCc4W4annW8hstY99LCBC1IlEyXETrdapE",
+  authDomain: "ktpoints-68071.firebaseapp.com",
+  databaseURL: "https://ktpoints-68071.firebaseio.com",
+  storageBucket: "ktpoints-68071.appspot.com"
+});
+
+
 
 
 
