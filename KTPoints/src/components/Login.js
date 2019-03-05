@@ -98,7 +98,7 @@ class Login extends Component {
                            value={this.state.password}  
                            returnKeyType="go" ref={(input)=> this.passwordInput = input} 
                            onChangeText={(password) => this.updatePassword(password)} 
-                           onSubmitEditing={() => { this.submitPassword();}}
+                           onSubmitEditing={() => { this.handleLogin();}}
                            placeholder='Password' 
                            placeholderTextColor='rgba(225,225,225,0.7)' 
                            secureTextEntry/>
@@ -110,6 +110,7 @@ class Login extends Component {
                 <Button style={styles.buttonContainer}
                     title='Login'
                     onPress={() => {this.handleLogin();}}
+                    color={'#fff'}
                     />
                </View>
                

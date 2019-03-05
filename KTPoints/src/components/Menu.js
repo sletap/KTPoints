@@ -6,7 +6,17 @@ import Button from './Button';
 import Header from './Header';
 
 class Menu extends Component {
-    
+    static navigationOptions = {
+        title: '',
+        headerStyle: {
+            backgroundColor: '#2c3e50',
+        },
+        headerTintColor: '#fff',
+        headerLeft: null
+    };
+
+
+
     render() {
         const {navigate} = this.props.navigation;
         return(

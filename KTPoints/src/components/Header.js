@@ -27,10 +27,14 @@ const Header = (props) => {
                 <Text style={textStyle}>{props.HeaderText}</Text>
             </HeaderSection>
             <HeaderSection>
-                <Image 
+                <Button onPress={() => {navigation.navigate('ProfileScreen', {
+                        data: props.totalState
+                    })}}>
+                    <Image 
                     style={profilePicStyle}
                     source={{uri: props.imgUrl}} 
-                />
+                    />  
+                </Button>
             </HeaderSection>
         </View>
     );

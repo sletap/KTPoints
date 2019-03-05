@@ -14,6 +14,15 @@ class AboutMe extends Component {
        console.log(this.state.data);
     }
     
+    static navigationOptions = {
+        title: 'Profile',
+        headerStyle: {
+            backgroundColor: '#2c3e50',
+        },
+        headerTintColor: '#fff',
+        headerLeft: null
+    };
+
     render() {
         const barWidth = Dimensions.get('screen').width - 30;
         return (

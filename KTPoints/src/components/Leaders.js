@@ -45,6 +45,15 @@ class Leaders extends Component{
             console.log(this.state.sorted_members)
           });
     }
+
+    static navigationOptions = {
+        title: 'Leaderboard',
+        headerStyle: {
+            backgroundColor: '#2c3e50',
+        },
+        headerTintColor: '#fff',
+    };
+
     render() {
         const listleaders = this.state.sorted_members
         .map(bro => (
@@ -62,7 +71,6 @@ class Leaders extends Component{
       ));
         return (
         <ScrollView>
-            <Text style={styles.header_text}>Leaderboard</Text>
             {listleaders}
         </ScrollView>
         );
