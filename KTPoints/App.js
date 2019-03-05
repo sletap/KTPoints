@@ -14,9 +14,11 @@ import Main from './src/components/Main.js'
 import Menu from './src/components/Menu.js'
 import AboutMe from './src/components/Aboutme.js'
 import Leaders from './src/components/Leaders'
+import AddDB from './src/components/AddDB'
 import { createStackNavigator,createAppContainer, DrawerNavigator } from 'react-navigation';
 import * as firebase from "firebase";
 
+// initializes firebase calls
 firebase.initializeApp({
   apiKey: "AIzaSyCc4W4annW8hstY99LCBC1IlEyXETrdapE",
   authDomain: "ktpoints-68071.firebaseapp.com",
@@ -24,20 +26,17 @@ firebase.initializeApp({
   storageBucket: "ktpoints-68071.appspot.com"
 });
 
-
-
-
-
 const Navigator = createStackNavigator({
   LoginScreen: { screen: Login },
-  MainScreen: {screen: Main},
-  MenuScreen: {screen: Menu},
-  ProfileScreen: {screen: AboutMe},
-  LeadersScreen: {screen: Leaders},
+  MainScreen: { screen: Main },
+  MenuScreen: { screen: Menu },
+  ProfileScreen: { screen: AboutMe },
+  LeadersScreen: { screen: Leaders },
+  Admin: { screen: AddDB },
  },
  {
   initialRouteName: 'LoginScreen',
-}
+ }
 );
 
 
