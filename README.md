@@ -27,3 +27,6 @@ A crossplatform KTP app made using react native
 * To display images correctly: npm install --save axios
 * To handle date time stuff: npm install moment --save
 * For displaying data: npm install --save react-native-progress-bar-animated
+
+# General Branching:
+* Complete a feature in a branch, then create a pull request for that branch to come into the REDO branch (which will eventually be master)
