@@ -13,6 +13,8 @@ A crossplatform KTP app made using react native
 * Change to the inner KTPoints directory (KTPoints/KTPoints/)
 * Run: npm install
 * Then (with Xcode installed) run: react-native run-ios
+* For Android users build using Android Studio
+* Alternative option: react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
 
 # Instructions for PC:
 * Follow instructions at this link: https://facebook.github.io/react-native/docs/getting-started
