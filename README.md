@@ -13,6 +13,8 @@ A crossplatform KTP app made using react native
 * Change to the inner KTPoints directory (KTPoints/KTPoints/)
 * Run: npm install
 * Then (with Xcode installed) run: react-native run-ios
+* For Android users build using Android Studio
+* Alternative option: react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
 
 # Instructions for PC:
 * Follow instructions at this link: https://facebook.github.io/react-native/docs/getting-started
@@ -21,5 +23,7 @@ A crossplatform KTP app made using react native
 * ReactNavigation install somewhere on this site: https://reactnavigation.org/en/
 * To handle Scrolling on Login: npm i react-native-keyboard-aware-scroll-view --save
 * To handle link routing/navigation: npm install --save react-navigation
-* To handle firebase installation: npm install --save react-native-firebase
+* To handle firebase calls: npm install --save firebase
+* To display images correctly: npm install --save axios
 * To handle date time stuff: npm install moment --save
+* For displaying data: npm install --save react-native-progress-bar-animated

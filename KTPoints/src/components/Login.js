@@ -97,7 +97,7 @@ class Login extends Component {
                            placeholder='Password' 
                            placeholderTextColor='rgba(225,225,225,0.7)' 
                            secureTextEntry/>
-                 {/*   <Button onPress={onButtonPress} title = 'Login' style={styles.loginButton} /> */}
+                   {/* <Button onPress={onButtonPress} title = 'Login' style={styles.loginButton} /> */}
               {/* <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('HelloWorldScreen')}
                     >
                     <Text  style={styles.buttonText}>LOGIN</Text>
@@ -105,7 +105,7 @@ class Login extends Component {
                 <Button style={styles.buttonContainer}
                     title='Login'
                     onPress={() => {this.handleLogin();}}
-                    color={'#fff'}
+                    color={'#063852'}
                     />
                </View>
                
