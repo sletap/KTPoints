@@ -1,12 +1,9 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Alert, Button ,StyleSheet ,StatusBar,KeyboardAvoidingView,Image} from 'react-native';
-
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import * as firebase from "firebase";
 
-
-  
 // create a component
 class Login extends Component {
     state = {
@@ -15,7 +12,6 @@ class Login extends Component {
         auth: 1, 
     }
     
-
     static navigationOptions = {
         title: 'Login',
         headerStyle: {
@@ -23,7 +19,6 @@ class Login extends Component {
         },
         headerTintColor: '#fff',
     };
-
 
     handleLogin = () => {
         const {navigate} = this.props.navigation;

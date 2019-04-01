@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Alert, Button ,StyleSheet ,StatusBar,KeyboardAvoidingView,Image} from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Alert, Button ,StyleSheet, StatusBar, KeyboardAvoidingView, Image} from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import * as firebase from "firebase";
 
@@ -74,12 +74,9 @@ class AddDB extends Component {
             extraScrollHeight={20}
             enableOnAndroid={false}
         >
-                <View style={styles.loginContainer}>
-                    <Image source={require('./images/ktpLogo.png')}  style={styles.logo}/>
-                </View>
                <View style={styles.formContainer}>
                <StatusBar barStyle="light-content"/>
-                <TextInput style = {styles.input} 
+               <TextInput style = {styles.input} 
                             autoCapitalize="none" 
                             onSubmitEditing={() => {this.passwordInput.focus(); this.submitUsername()}}
                             onChangeText={(username) => this.updateUsername(username)} 
@@ -88,7 +85,6 @@ class AddDB extends Component {
                             returnKeyType="next" 
                             placeholder='Email or Mobile Num' 
                             placeholderTextColor='rgba(225,225,225,0.7)'/>
-
                 <TextInput style = {styles.input} 
                            value={this.state.password}  
                            returnKeyType="go" ref={(input)=> this.passwordInput = input} 
