@@ -30,7 +30,7 @@ A crossplatform KTP app made using react native
 * In android studio select `Open an existing Android Studio project`
  * In the KtPoints directory select the folder KTPoints/Android/
  * In Android Studio navigate to Android Virtual Device Manager
- * If no devices are present set one up using the instructions here: https://developer/android.com/studio/run/managing-avds.html
+ * If no devices are present set one up using the instructions here: https://developer.android.com/studio/run/managing-avds.html
  * Once device is set up start your emulator  (green play button on far right side)
 * In KTPoints directory run the command `react-native run-android` 
 
