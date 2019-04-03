@@ -19,8 +19,7 @@ A crossplatform KTP app made using react native
 # Instructions for PC:
 * Follow instructions at this link: https://facebook.github.io/react-native/docs/getting-started
 
-# Additional Dependencies to try installing if something isn't working:
-* This may or may not be required anymore
+# Additional Dependencies to try installing if it's not working:
 * ReactNavigation install somewhere on this site: https://reactnavigation.org/en/
 * To handle Scrolling on Login: `npm i react-native-keyboard-aware-scroll-view --save`
 * To handle link routing/navigation: `npm install --save react-navigation`
@@ -34,7 +33,7 @@ A crossplatform KTP app made using react native
 ## Zeplin
 * Designs can be made using whatever program you prefer (Sketch, Adobe XD, Figma, Photoshop)
 * When finished with designs import them to Zeplin 
-** Zeplin is a design platform for all of our designs as well as easier handoffs between designer and programmer.
+  * Zeplin is a design platform for all of our designs as well as easier handoffs between designer and programmer.
 * Our Zeplin project can be found at: https://zpl.io/aNPde4Z
 
 ## Trello
@@ -44,7 +43,7 @@ A crossplatform KTP app made using react native
 
 # General Branching:
 * Create a new branch using the command: `git checkout -b  [name of branch]`
-** Naming scheme for branches is `hotfix/[yourname-hotfixname]`  or `feature/[yourname-feature_name]`
+  * Naming scheme for branches is `hotfix/[yourname-hotfixname]`  or `feature/[yourname-feature_name]`
 * Complete a feature in a branch, then create a pull request for that branch to come into the REDO branch (which will eventually be master)
 
 
