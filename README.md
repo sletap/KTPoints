@@ -8,16 +8,34 @@ A crossplatform KTP app made using react native
 * Install Node: `brew install node`
 * Install Watchman: `brew install watchman`
 * Install React Native using the command: `npm install -g react-native-cli`
+* Change to the inner KTPoints directory (KTPoints/KTPoints/)
+* Run: `npm install` (also might need to run `npm audit fix`)
 
 ## Step 2 Running the App:
 * Change to the inner KTPoints directory (KTPoints/KTPoints/)
-* Run: `npm install` (also might need to run `npm audit fix`)
 * Then (with Xcode installed) run: `react-native run-ios`
 * For Android users build using Android Studio
 * Alternative option: `react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res`
 
 # Instructions for PC:
+## Installation instructions
 * Follow instructions at this link: https://facebook.github.io/react-native/docs/getting-started
+ * Use the `React Native CLI Quickstart` tab
+ * Stop once you reach the `Creating New Application` header
+* Clone Repo into folder you want
+ * Change to the inner KTPoints directory (KTPoints/KTPoints/)
+ * Run: `npm install` (also might need to run `npm audit fix`)
+ 
+## Running Instructions
+* In android studio select `Open an existing Android Studio project`
+ * In the KtPoints directory select the folder KTPoints/Android/
+ * In Android Studio navigate to Android Virtual Device Manager
+ * If no devices are present set one up using the instructions here: https://developer/android.com/studio/run/managing-avds.html
+ * Once device is set up start your emulator  (green play button on far right side)
+* In KTPoints directory run the command `react-native run-android` 
+
+
+
 
 # Additional Dependencies to try installing if it's not working:
 * ReactNavigation install somewhere on this site: https://reactnavigation.org/en/
