@@ -52,7 +52,7 @@ A crossplatform KTP app made using react native
 * Designs can be made using whatever program you prefer (Sketch, Adobe XD, Figma, Photoshop)
 * When finished with designs import them to Zeplin 
   * Zeplin is a design platform for all of our designs as well as easier handoffs between designer and programmer.
-* Our Zeplin project can be found at: https://zpl.io/aNPde4Z
+* Our Zeplin project can be found at: https://zpl.io/2j5ZPPW
 
 ## Trello
 * Task management system
