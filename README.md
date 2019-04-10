@@ -8,6 +8,7 @@ A crossplatform KTP app made using react native
 * Install Node: `brew install node`
 * Install Watchman: `brew install watchman`
 * Install React Native using the command: `npm install -g react-native-cli`
+* Clone Repo into folder you want
 * Change to the inner KTPoints directory (KTPoints/KTPoints/)
 * Run: `npm install` (also might need to run `npm audit fix`)
 
