@@ -11,11 +11,13 @@ A crossplatform KTP app made using react native
 * Clone Repo into folder you want
 * Change to the inner KTPoints directory (KTPoints/KTPoints/)
 * Run: `npm install` (also might need to run `npm audit fix`)
+* Note: if you're getting an error like `undefined is not a function (evaluating '_iterator2[typeof Symbol === "function" ? Symbol.iterator : "@@iterator"]()'`, try `npm i --save-dev babel-polyfill` and `import 'babel-polyfill';` in Index.js
 
 ## Step 2 Running the App:
 * Change to the inner KTPoints directory (KTPoints/KTPoints/)
 * Then (with Xcode installed) run: `react-native run-ios`
-* For Android users build using Android Studio
+* For Android users open a virtual device or connect your phone to android studio
+* Then (with your emulator open/phone ready) run: `react-native run-android`
 * Alternative option: `react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res`
 
 # Instructions for PC:
@@ -34,9 +36,6 @@ A crossplatform KTP app made using react native
  * If no devices are present set one up using the instructions here: https://developer.android.com/studio/run/managing-avds.html
  * Once device is set up start your emulator  (green play button on far right side)
 * In KTPoints directory run the command `react-native run-android` 
-
-
-
 
 # Additional Dependencies to try installing if it's not working:
 * ReactNavigation install somewhere on this site: https://reactnavigation.org/en/
