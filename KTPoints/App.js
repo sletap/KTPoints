@@ -16,6 +16,7 @@ import AboutMe from './src/components/Aboutme.js'
 import Leaders from './src/components/Leaders'
 import ActivesList from './src/components/ActivesList'
 import Profile from './src/components/Profile'
+import SignUp from './src/components/SignUp'
 import { createStackNavigator,createAppContainer, DrawerNavigator } from 'react-navigation';
 import * as firebase from "firebase";
 
@@ -38,6 +39,7 @@ const Navigator = createStackNavigator({
   LeadersScreen: {screen: Leaders},
   ActivesScreen: {screen: ActivesList},
   DiffProfileScreen: {screen: Profile},
+  SignUpScreen: {screen: SignUp},
  },
  {
   initialRouteName: 'LoginScreen',

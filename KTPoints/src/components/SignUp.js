@@ -8,16 +8,17 @@ import * as firebase from "firebase";
 
   
 // create a component
-class Login extends Component {
+class SignUp extends Component {
     state = {
-        username: '',
+        email: '',
         password: '',
-        auth: 1, 
+        password2: '',
+        error: null
     }
     
 
     static navigationOptions = {
-        title: 'Login',
+        title: 'Sign Up',
         headerStyle: {
             backgroundColor: '#2c3e50',
         },
@@ -25,30 +26,24 @@ class Login extends Component {
     };
 
 
-    handleLogin = () => {
+    handleSignUp = () => {
         const {navigate} = this.props.navigation;
         console.log("In handle login")
-        var legit = 10
-        firebase.auth().signInWithEmailAndPassword(this.state.username, this.state.password).then((response) => {
-            // Handle Errors here.
-            uniq = this.state.username.split('@')[0]
-            navigate('MainScreen', {
-                uniqname: uniq,
-            })
-            console.log("Right")
-            legit = 0
-            // ...
-          }).catch(function(error) {
-            Alert.alert(
-                'Invalid Login Credentials',
-                'Please Try Again',
-            );   // Using this line
-        });
+        if (this.state.password == this.state.password2) {
+            firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+            .catch(error => this.setState({errorMessage: error.message}))
+            .then(() => navigate('LoginScreen'));
+            Alert.alert('Sign Up Successful!');
+        }
+        else {
+            Alert.alert('Invalid Sign Up Credentials',
+                        'Please Try Again',);
+        }
     }
 
     invalidLogin = () => {
         Alert.alert(
-            'Invalid Login Credentials',
+            'Invalid Sign Up Credentials',
             'Please Try Again',);
     }
 
@@ -66,6 +61,14 @@ class Login extends Component {
 
     updatePassword = (text) => {
         this.setState({password: text})
+    }
+
+    submitPassword2 = () => {
+        console.log(this.state.password2)
+    }
+
+    updatePassword2 = (text) => {
+        this.setState({password2: text})
     }
 
     render() {
@@ -91,30 +94,31 @@ class Login extends Component {
                             autoCorrect={false} 
                             keyboardType='email-address' 
                             returnKeyType="next" 
-                            placeholder='Email or Mobile Num' 
+                            placeholder='Email' 
                             placeholderTextColor='rgba(225,225,225,0.7)'/>
 
                 <TextInput style = {styles.input} 
                            value={this.state.password}  
                            returnKeyType="go" ref={(input)=> this.passwordInput = input} 
                            onChangeText={(password) => this.updatePassword(password)} 
-                           onSubmitEditing={() => { this.handleLogin();}}
+                           onSubmitEditing={() => { this.handleSignUp();}}
                            placeholder='Password' 
                            placeholderTextColor='rgba(225,225,225,0.7)' 
                            secureTextEntry/>
-                   {/* <Button onPress={onButtonPress} title = 'Login' style={styles.loginButton} /> */}
-              {/* <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('HelloWorldScreen')}
-                    >
-                    <Text  style={styles.buttonText}>LOGIN</Text>
-                </TouchableOpacity>  */}
+                
+                <TextInput style = {styles.input} 
+                           value={this.state.password2}  
+                           returnKeyType="go" ref={(input)=> this.passwordInput = input} 
+                           onChangeText={(password2) => this.updatePassword2(password2)} 
+                           onSubmitEditing={() => { this.handleSignUp();}}
+                           placeholder='Confirm Password' 
+                           placeholderTextColor='rgba(225,225,225,0.7)' 
+                           secureTextEntry/>
+
                 <Button style={styles.buttonContainer}
-                    title='Login'
-                    onPress={() => {this.handleLogin();}}
+                    title='Create Account'
+                    onPress={() => {this.handleSignUp();}}
                     color={'#063852'}
-                    />
-                <Button style={styles.buttonContainer}
-                    title='Sign Up'
-                    onPress={() => navigate('SignUpScreen')}
                     />
                </View>
                
@@ -175,4 +179,4 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default Login;
+export default SignUp;
