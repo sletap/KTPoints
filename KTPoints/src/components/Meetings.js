@@ -51,6 +51,9 @@ const styles = {
         flexDirection: 'row',
         borderColor: '#ddd',
         position: 'relative'
-    }
+    },
+    colorOveride: {
+        backgroundColor: '#ffffff',
+    },
 }
 export default Meetings;

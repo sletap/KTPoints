@@ -34,14 +34,14 @@ class Upcoming extends Component {
         const listTasks = this.state.tasks
       .map(resultItem => (
         <View key={resultItem[1]}>
-            <Card style={styles.containerStyle}>
-                <CardSection style={styles.containerStyle}>
+            <Card>
+                <CardSection>
                 <View style={styles.headerContentStyle}>
                             <Text style={styles.CategoryStyle}>{resultItem[1]}</Text>
                         </View>
                 </CardSection>
-                <CardSection style={styles.containerStyle}>
-                <View style={styles.headerContentStyle}>
+                <CardSection>
+                    <View style={styles.headerContentStyle}>
                             <Text style={styles.CategoryStyle}>{Moment(resultItem[0]).format('hh:mm a M/DD/YYYY')}</Text>
                         </View>
                 </CardSection>
@@ -88,11 +88,10 @@ const styles = StyleSheet.create({
         textDecorationLine: 'underline',
         fontSize: 24,
         textAlign: 'center',
-        color: '#2c3e50'
+        color: '#ffffff'
     },
       headerContentStyle: {
         flex: 1,
-        backgroundColor: '#2c3e50',
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center' 

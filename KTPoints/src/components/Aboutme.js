@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { View, StyleSheet,Image,Text, ScrollView,Dimensions } from 'react-native';
+import { View, Image,Text, ScrollView,Dimensions } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
+import LinearGradient from 'react-native-linear-gradient';
+import FontAwesome, { Icons } from 'react-native-fontawesome';
+import styles from './styles/tweaks.js';
 import Header from './Header';
-import ProgressBarAnimated from 'react-native-progress-bar-animated';
+import Button from './Button';
 
 
 
@@ -15,101 +18,111 @@ class AboutMe extends Component {
     }
     
     static navigationOptions = {
-        title: 'Profile',
+        headerTintColor: '#2c3e50',
         headerStyle: {
-            backgroundColor: '#2c3e50',
+            shadowColor: 'transparent',
+            backgroundColor: '#ffffff',
+            borderBottomWidth: 0,
         },
-        headerTintColor: '#fff',
-        headerLeft: null
     };
 
     render() {
+        //If viewing your own account
+        bottom_Buttons = (
+            <View>
+                <Card>
+                    <CardSection style = {styles.changePassword}>
+                        <View style={styles.headerContentStyle}>
+                        <Button style={styles.buttonContainer} onPress={() => {}}>
+                            <Text style = {[styles.text_style, styles.centerContent]}>Change Password</Text>
+                        </Button>
+                        </View>
+                    </CardSection>
+                </Card>
+                <Card>
+                    <CardSection>
+                        <View style={styles.headerContentStyle}>
+                        <Button style={styles.buttonContainer} onPress={() => {}}>
+                            <Text style = {[styles.text_style, styles.centerContent]}>Edit</Text>
+                        </Button>
+                        </View>
+                    </CardSection>
+                </Card>
+            </View>
+        );
+
         const barWidth = Dimensions.get('screen').width - 30;
         return (
-            <ScrollView>
-                <View>
-                    <Header HeaderText={this.state.data.name} 
-                            navigation={this.props.navigation}
-                            totalState={this.props.navigation.state.params.data}/>
-                    <Card>
-                        <CardSection>
+            <ScrollView styles="styles.fullScreen">
+                <LinearGradient 
+                    colors={['#ffffff', '#a8dbff']}
+                    style="styles.gradientBackground">
+                    <View style =  {styles.last_item}>
+                        <View style={styles.imageContainer}>
                             <Image 
-                            style={{height: 300, flex: 1, width: null}}
+                            style={styles.mask}
                             source={{uri: this.state.data.img}}
                             />
-                        </CardSection>
-                    </Card>
-                    <Card>
-                        <CardSection>
-                            <Text style = {styles.text_style}>Major: {this.state.data.major} 
+                            <Text style = {styles.userName}>{this.state.data.name} 
                             </Text>
-                        </CardSection>
-
-                        <CardSection>
-                            <Text style = {styles.text_style}>Grade: {this.state.data.year} 
+                            <Text style = {styles.userStatus}>{this.state.data.standing} 
                             </Text>
-                        </CardSection>
-
-                        <CardSection>
-                            <Text style = {styles.text_style}>Standing: {this.state.data.standing}
-                            </Text>
-                        </CardSection>
-
-                        <CardSection>
-                            <Text style = {styles.text_style}>Pledge Class: {this.state.data.pc}
-                            </Text>
-                        </CardSection>
-                    </Card>
-                    <Card>
-                        <CardSection>
-                            <Text style = {styles.text_style}>Current Points: {this.state.data.points}</Text>
-                        </CardSection>
-                    
-                        <CardSection>
-                            <Text style = {styles.text_style}>Meetings Left: {this.state.data.meetingsLeft}</Text>
-                        </CardSection>
-                    </Card>
-                    <Card>
-                        <CardSection>
-                            <Text style = {styles.text_style}> Points Progress: 
-                            </Text>
-                        </CardSection>
-
-                        <CardSection> 
-                            <ProgressBarAnimated
-                            backgroundColor={'#fff'}
-                            maxValue={100}
-                            width={barWidth}
-                            value={this.state.data.points}
-                            backgroundColorOnComplete="#7CFC00"
-                            />
-                        </CardSection>
-                    </Card>
-                </View>
+                        </View>
+                        <Card>
+                            <CardSection>
+                                <Text style = {[styles.text_style, styles.iconPadding]}>Major: {this.state.data.major} 
+                                </Text>
+                            </CardSection>
+                            <CardSection>
+                                <Text style = {styles.text_style}>Grade: {this.state.data.year} 
+                                </Text>
+                            </CardSection>
+                            <CardSection>
+                                <Text style = {styles.text_style}>Pledge Class: {this.state.data.pc}
+                                </Text>
+                            </CardSection>
+                        </Card>
+                        <Card>
+                            <CardSection>
+                                <View style={styles.headerContentStyle}>
+                                    <Text style = {[styles.text_style, styles.centerContent]}>About</Text>
+                                </View>
+                            </CardSection>
+                            <CardSection>
+                                <Text style = {styles.text_style}> 
+                                    Lorem ipsum dolor amet mlkshk 
+                                    YOLO raclette four loko yuccie vaporware 
+                                    meditation cliche man bun tattooed craft beer taiyaki   
+                                </Text>
+                            </CardSection>
+                        </Card>
+                        <Card>
+                            <CardSection>
+                                <Text style = {styles.text_style}>Current Points: {this.state.data.points}</Text>
+                            </CardSection>
+                        
+                            <CardSection>
+                                <Text style = {styles.text_style}>Meetings Left: {this.state.data.meetingsLeft}</Text>
+                            </CardSection>
+                        </Card>
+                        <Card>
+                            <CardSection>
+                                <FontAwesome style={[styles.text_style, styles.iconPadding, styles.phonePadding]}>{Icons.mobileAlt}</FontAwesome>
+                                <Text style = {styles.text_style}> 123-456-7890</Text>
+                            </CardSection>
+                            <CardSection>
+                                <FontAwesome style={[styles.text_style, styles.iconPadding]}>{Icons.envelope}</FontAwesome>
+                                <Text style = {styles.text_style}> generic@umich.edu </Text>
+                            </CardSection>
+                        </Card>
+                        {bottom_Buttons}
+                    </View>
+                </LinearGradient>
             </ScrollView>
         );
     }
 
 }
-const styles = StyleSheet.create({
-    buttonContainer:{
-        backgroundColor: '#2c3e50',
-        paddingVertical: 20,
-    },
-    buttonText:{
-        color: '#FFF',
-        textAlign: 'center',
-        fontWeight: '700'
-    }, 
-    loginButton:{
-      backgroundColor:  '#2c3e50',
-       color: '#fff'
-    },
-    text_style:{
-         fontSize: 24,
-         textAlign: 'center',
-         color: '#fff'
-      }
-});
+
 
 export default AboutMe;

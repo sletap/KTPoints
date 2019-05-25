@@ -78,10 +78,10 @@ class Main extends React.Component {
     static navigationOptions = {
         title: 'Home',
         headerStyle: {
-            backgroundColor: '#2c3e50',
+            backgroundColor: '#52779c',
         },
         headerTintColor: '#fff',
-        headerLeft: null
+        headerLeft: null,
     };
 
   render(){

@@ -110,7 +110,7 @@ class Login extends Component {
                 <Button style={styles.buttonContainer}
                     title='Login'
                     onPress={() => {this.handleLogin();}}
-                    color={'#063852'}
+                    color={'#ffffff'}
                     />
                </View>
                
