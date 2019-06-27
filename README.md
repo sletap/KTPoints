@@ -1,3 +1,5 @@
+# Project has moved to https://github.com/ktp-dev/KTPoints
+
 # KTPledge
 
 A crossplatform KTP app made using react native
